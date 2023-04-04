@@ -1,1 +1,1 @@
-# CS1302
+# CS1302 Project
