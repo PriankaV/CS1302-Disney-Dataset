@@ -1,0 +1,37 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the iris dataset
+iris = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/titles.csv', 
+                   names=['title', 'type', 'release_year', 'age_certification', 'runtime', 'seasons'])
+
+# Scatter plot
+plt.scatter(iris['release_year'], iris['runtime'])
+plt.xlabel('Release Year')
+plt.ylabel('Runtime')
+plt.title('Release Year vs. Runtime')
+plt.show()
+
+# Histogram
+plt.hist(iris['age_certification'], bins=20)
+plt.xlabel('Age Certification')
+plt.ylabel('Frequency')
+plt.title('Distribution of Age Certification')
+plt.show()
+
+# Bar chart
+type_counts = iris['type'].value_counts()
+plt.bar(type_counts.index, type_counts.values)
+plt.xlabel('Type')
+plt.ylabel('Count')
+plt.title('Number of Titles by Type')
+plt.show()
+
+# Line graph
+release_year_counts = iris.groupby('release_year')['title'].count()
+plt.plot(release_year_counts.index, release_year_counts.values)
+plt.xlabel('Release Year')
+plt.ylabel('Number of Titles')
+plt.title('Number of Titles by Release Year')
+plt.show()
+
