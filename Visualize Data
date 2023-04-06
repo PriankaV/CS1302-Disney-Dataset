@@ -35,3 +35,9 @@ plt.ylabel('Number of Titles')
 plt.title('Number of Titles by Release Year')
 plt.show()
 
+# Pie chart
+age_ratings = DF['age_certification'].dropna()
+age_ratings_count = age_ratings.value_counts()
+plt.pie(age_ratings_count, labels=age_ratings_count.index, autopct='%1.1f%%')
+plt.title('Distribution of Age Ratings in Disney Plus')
+plt.show()
