@@ -1,5 +1,3 @@
-This project aims to leverage Python programming to process and cleanse a data set. 
-The primary objective entails working with a dataset of 300 rows and 5 columns. 
-A secondary data table will be derived from the first, with a view to obtaining a 2-column table that serves as a basis for calculating various statistical parameters, including the mean, median, variance, and standard deviation of the data points.
-Ultimately, the dataset will be divided into two subsets, namely a training set and a validation set. 
-These subsets will serve as the basis for developing an appropriate regression or classification model.
+This project is an excellent opportunity to showcase the power and versatility of Python programming when it comes to data analysis. Python is a popular language for data analysis, thanks to its vast libraries and built-in functions for processing and cleansing data. By leveraging Python's capabilities, the dataset can be efficiently transformed and prepared for analysis.
+The main goal of this project is to analyze a dataset that consists of 300 rows and 5 columns. It involves extracting relevant information and creating visual charts to understand the data better. Python provides a range of libraries, including Numpy, Pandas, and Matplotlib. By using these libraries, the dataset can be transformed into a more manageable format, which will enable the creation of insightful charts and graphs. These codes strive to make more efficient and accurate data annalysis.
+Specifically, this project goes over a dataset (https://www.kaggle.com/datasets/dgoenrique/disney-movies-and-tv-shows?select=titles.csv) that reviews Disney+ movies and many qualities that involve in it.
