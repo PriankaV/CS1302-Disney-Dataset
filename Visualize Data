@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 # Load the df dataset
 iris = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/titles.csv', 
-                   names=['title', 'type', 'release_year', 'age_certification', 'runtime', 'seasons'])
+                   names=['title', 'type', 'release_year', 'age_certification', 'runtime', 'seasons', 'imdb_score'])
 
 # Scatter plot
-plt.scatter(df['release_year'], df['runtime'])
+plt.scatter(df['imdb_score'], df['runtime'])
 plt.xlabel('Release Year')
 plt.ylabel('Runtime')
 plt.title('Release Year vs. Runtime')
