@@ -11,7 +11,7 @@ font_path = 'path/to/SourceSansPro-Regular.ttf'
 font_prop = fm.FontProperties(fname=font_path)
 
 # Set the color scheme
-color_scheme = ['#FF5733', '#C70039', '#900C3F', '#581845']
+color_scheme = ['#FA6443', '#F21151', '#E314C7', '#9237ED']
 
 # Scatter plot
 plt.scatter(df['imdb_score'], df['runtime'], color=color_scheme[0])
