@@ -6,11 +6,11 @@ from sklearn.tree import export_graphviz
 import graphviz
 
 # Load the data
-DF = pd.read_csv('titles.csv')
+DF = pd.read_csv('titles.csv', nrows=300)
 
 # Select the features and target variable
-FilteredDF = DF.dropna(axis=0, subset=('release_year', 'runtime', 'seasons', 'age_certification'), how='any')
-X = FilteredDF[['release_year', 'runtime', 'seasons']]
+FilteredDF = DF.dropna(axis=0, subset=('release_year', 'runtime', 'age_certification'), how='any')
+X = FilteredDF[['release_year', 'runtime']]
 y = FilteredDF['age_certification']
 PossibleCerts = list(set(y.values))
 
@@ -30,7 +30,7 @@ print("Accuracy: {:.2f}%".format(accuracy * 100))
 
 # Export the decision tree as a DOT file
 dot_data = export_graphviz(clf, out_file=None, 
-                           feature_names=['release_year', 'runtime', 'seasons'], 
+                           feature_names=['release_year', 'runtime'], 
                            class_names=PossibleCerts)
 # Display the decision tree using Graphviz
 graph = graphviz.Source(dot_data)
