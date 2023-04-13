@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.tree import export_graphviz
+import graphviz
 
 # Load the data
 DF = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/titles.csv', nrows=700)
@@ -24,10 +26,6 @@ y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy: {:.2f}%".format(accuracy * 100))
 
-"""
-from sklearn.tree import export_graphviz
-import graphviz
-
 # Export the decision tree as a DOT file
 dot_data = export_graphviz(clf, out_file=None, 
                            feature_names=['release_year', 'runtime', 'seasons'], 
@@ -37,4 +35,3 @@ dot_data = export_graphviz(clf, out_file=None,
 # Display the decision tree using Graphviz
 graph = graphviz.Source(dot_data)
 graph.view()
-"""
