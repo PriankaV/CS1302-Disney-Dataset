@@ -3,18 +3,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.tree import export_graphviz
-import graphviz
+import graphing
 
 # Load the data
-DF = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/titles.csv', nrows=700)
+DF = pd.read_csv('titles.csv')
 
 # Select the features and target variable
-X = DF[['release_year', 'runtime', 'seasons']]
-y = DF['age_certification']
+FilteredDF = DF.dropna(axis=0, subset=('release_year', 'runtime', 'seasons', 'age_certification'), how='any')
+X = FilteredDF[['release_year', 'runtime', 'seasons']]
+y = FilteredDF['age_certification']
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
+PossibleCerts = list(set(y.values))
 # Create a decision tree classifier and train it on the training data
 clf = DecisionTreeClassifier()
 clf.fit(X_train, y_train)
@@ -29,9 +30,7 @@ print("Accuracy: {:.2f}%".format(accuracy * 100))
 # Export the decision tree as a DOT file
 dot_data = export_graphviz(clf, out_file=None, 
                            feature_names=['release_year', 'runtime', 'seasons'], 
-                           class_names=['G', 'PG', 'TV-PG', 'PG-13', 'TV-G', 'TV-14', 'TV-7', 'TV-Y', 'TV-MA' 'R', 'TV-Y7-FV'], 
-                           filled=True, rounded=True, 
-                           special_characters=True)
+                           class_names=PossibleCerts)
 # Display the decision tree using Graphviz
-graph = graphviz.Source(dot_data)
+graph = graphing.Source(dot_data)
 graph.view()
