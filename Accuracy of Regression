@@ -7,7 +7,7 @@ df = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/title
                    names=['title', 'type', 'release_year', 'age_certification', 'runtime', 'seasons', 'imdb_score'])
 
 # Scatter plot
-plt.scatter(df['imdb_score'], iris['runtime'])
+plt.scatter(df['imdb_score'], df['runtime'])
 plt.xlabel('IMDB Score')
 plt.ylabel('Runtime')
 plt.title('IMDB Score vs. Runtime')
