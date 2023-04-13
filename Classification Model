@@ -29,7 +29,7 @@ print("Accuracy: {:.2f}%".format(accuracy * 100))
 # Export the decision tree as a DOT file
 dot_data = export_graphviz(clf, out_file=None, 
                            feature_names=['release_year', 'runtime', 'seasons'], 
-                           class_names=['G', 'PG', 'PG-13', 'R'], 
+                           class_names=['G', 'PG', 'TV-PG', 'PG-13', 'TV-G', 'TV-14', 'TV-7', 'TV-Y', 'TV-MA' 'R', 'TV-Y7-FV'], 
                            filled=True, rounded=True, 
                            special_characters=True)
 # Display the decision tree using Graphviz
