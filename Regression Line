@@ -6,15 +6,16 @@ from scipy import stats
 df = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/titles.csv', 
                    names=['title', 'type', 'release_year', 'age_certification', 'runtime', 'seasons', 'imdb_score'])
 
-# Scatter plot
+#Scatterplot
 plt.scatter(df['imdb_score'], df['runtime'])
-plt.xlabel('IMDB Score')
+plt.xlabel('Release Year')
 plt.ylabel('Runtime')
-plt.title('IMDB Score vs. Runtime')
+plt.title('Release Year vs. Runtime')
+plt.show()
 
 # Perform linear regression
 slope, intercept, r_value, p_value, std_err = stats.linregress(df['imdb_score'], df['runtime'])
-plt.plot(df['imdb_score'], intercept + slope*iris['imdb_score'], 'r', label='Regression line')
+plt.plot(df['imdb_score'], intercept + slope*df['imdb_score'], 'r', label='Regression line')
 
 plt.legend()
 plt.show()
