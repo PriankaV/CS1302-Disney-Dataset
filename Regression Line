@@ -13,7 +13,7 @@ plt.ylabel('Runtime')
 plt.title('IMDB Score vs. Runtime')
 
 # Perform linear regression
-slope, intercept, r_value, p_value, std_err = stats.linregress(iris['imdb_score'], iris['runtime'])
+slope, intercept, r_value, p_value, std_err = stats.linregress(df['imdb_score'], df['runtime'])
 plt.plot(df['imdb_score'], intercept + slope*iris['imdb_score'], 'r', label='Regression line')
 
 plt.legend()
