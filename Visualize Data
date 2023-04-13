@@ -1,15 +1,18 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import Part12
 
 # Load the df dataset
 iris = pd.read_csv('/Users/avvaichandrasekaran/CollegeCoding/CSC1302/Project/titles.csv', 
                    names=['title', 'type', 'release_year', 'age_certification', 'runtime', 'seasons', 'imdb_score'])
 
+df = Part12.ageDF
+
 # Scatter plot
 plt.scatter(df['imdb_score'], df['runtime'])
-plt.xlabel('Release Year')
+plt.xlabel('IMDB Score')
 plt.ylabel('Runtime')
-plt.title('Release Year vs. Runtime')
+plt.title('IMDB Score vs. Runtime')
 plt.show()
 
 # Histogram
@@ -36,8 +39,9 @@ plt.title('Number of Titles by Release Year')
 plt.show()
 
 # Pie chart
-age_ratings = DF['age_certification'].dropna()
+age_ratings = df['age_certification']
 age_ratings_count = age_ratings.value_counts()
-plt.pie(age_ratings_count, labels=age_ratings_count.index, autopct='%1.1f%%')
+plt.pie(age_ratings_count, labels=None, autopct='%1.1f%%',  textprops={'fontsize': 10})
 plt.title('Distribution of Age Ratings in Disney Plus')
+plt.legend(labels = age_ratings_count.index, bbox_to_anchor=(1,1))
 plt.show()
