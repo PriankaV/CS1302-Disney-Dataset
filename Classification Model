@@ -8,7 +8,7 @@ import graphviz
 # Load the data
 DF = pd.read_csv('titles.csv', nrows=300)
 
-# Select the features and target variable
+# Selecting the target variables
 FilteredDF = DF.dropna(axis=0, subset=('release_year', 'runtime', 'age_certification'), how='any')
 X = FilteredDF[['release_year', 'runtime']]
 y = FilteredDF['age_certification']
